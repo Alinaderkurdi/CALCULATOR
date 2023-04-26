@@ -58,7 +58,7 @@ body {
     #main-div .input-section .number-box {
       width: 88%;
       height: 20px;
-      border: 1px blueviolet solid;
+      border: 1px #fae100 solid;
       margin-left: 50px;
       margin-top: 4px; }
     #main-div .input-section .input-fild {
