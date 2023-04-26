@@ -30,7 +30,7 @@ body {
       #main-div .head-section .side-bare-button .bi-list {
         font-size: 1.8rem; }
     #main-div .head-section .Calculator-state {
-      margin-left: 10%; }
+      margin-left: 15px; }
     #main-div .head-section .darke-mode-button {
       width: 35px;
       height: 35px;
@@ -59,14 +59,19 @@ body {
       width: 88%;
       height: 20px;
       border: 1px #fae100 solid;
-      margin-left: 50px;
+      margin-left: 11%;
       margin-top: 4px; }
+      #main-div .input-section .number-box .text-number-box {
+        font-family: inherit;
+        float: right;
+        font-size: 0.9rem;
+        margin-right: 3%; }
     #main-div .input-section .input-fild {
-      width: 90%;
+      width: 94%;
       height: 70px;
       display: inline-block;
       margin-top: 4px;
-      margin-left: 43px;
+      margin-left: 5%;
       outline: none;
       background: none;
       font-size: 2.5rem;
@@ -75,5 +80,15 @@ body {
       font-family: inherit; }
       #main-div .input-section .input-fild::-webkit-inner-spin-button {
         appearance: none; }
+      #main-div .input-section .input-fild::placeholder {
+        font-family: inherit;
+        color: black; }
+  #main-div .key-section {
+    width: 100%;
+    height: 500px;
+    border: 1px orangered solid;
+    margin-top: 10px;
+    min-width: 310px;
+    max-width: 450px; }
 
 /*# sourceMappingURL=style.css.map */
