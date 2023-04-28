@@ -14,7 +14,7 @@ body {
   height: 100vh;
   background-color: #E6E6E6; }
   #main-div .root-div {
-    width: 90%;
+    width: 100%;
     height: 100vh;
     border: 1px blueviolet solid;
     min-width: 310px; }
@@ -24,27 +24,28 @@ body {
       border: 1px black solid;
       margin: 2px auto;
       margin-top: 15px;
-      margin-left: 100px;
+      margin-left: 0px;
       min-width: 310px;
       max-width: 451px;
       border-radius: 2px; }
       #main-div .root-div .div-contaner .side-section {
         width: 300px;
-        height: 630px;
-        border: 1px red solid;
+        height: 683px;
         position: absolute;
         margin-top: 45px;
         margin-left: 1px;
+        border: 2px red solid;
         display: none;
-        border-radius: 4px; }
+        border-radius: 4px;
+        background-color: #E6E6E6; }
       #main-div .root-div .div-contaner .head-section {
         width: 100%;
         height: 45px;
-        border: 1px #40ff00 solid;
         min-width: 310px;
         max-width: 450px;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        justify-content: space-between; }
         #main-div .root-div .div-contaner .head-section .side-bare-button {
           width: 38px;
           height: 38px;
@@ -57,11 +58,12 @@ body {
           #main-div .root-div .div-contaner .head-section .side-bare-button .bi-list {
             font-size: 1.8rem; }
         #main-div .root-div .div-contaner .head-section .Calculator-state {
-          margin-left: 15px; }
+          margin-right: 10px;
+          cursor: default; }
         #main-div .root-div .div-contaner .head-section .darke-mode-button {
           width: 38px;
           height: 38px;
-          margin-left: 5%;
+          margin-left: 100px;
           border: none;
           background: none;
           cursor: pointer; }
@@ -72,7 +74,6 @@ body {
         #main-div .root-div .div-contaner .head-section .history-button {
           width: 38px;
           height: 38px;
-          margin-left: 35%;
           border: none;
           background: none;
           border-radius: 3px; }
@@ -136,7 +137,8 @@ body {
           border: none;
           outline: none;
           cursor: pointer;
-          color: black; }
+          color: black;
+          font-size: 1.3rem; }
           #main-div .root-div .div-contaner .key-section button:hover {
             background-color: #D1D1D1; }
         #main-div .root-div .div-contaner .key-section .bt-section-1 {
@@ -150,5 +152,13 @@ body {
         #main-div .root-div .div-contaner .key-section .dif-button {
           background-color: #F0F0F0;
           color: black; }
+      #main-div .root-div .div-contaner .history-section {
+        width: 69.5%;
+        height: 550px;
+        background-color: red;
+        position: absolute;
+        bottom: 50px;
+        max-width: 470px;
+        display: none; }
 
 /*# sourceMappingURL=style.css.map */
