@@ -166,15 +166,49 @@ body {
         bottom: 50px;
         position: absolute;
         min-width: 310px;
-        max-width: 449px; }
+        max-width: 449px;
+        z-index: -10;
+        left: -500px;
+        opacity: 0.8; }
+        #main-div .root-div .div-contaner .history-section .out-put-section {
+          width: 95%;
+          height: 500px;
+          border: 1px  solid;
+          margin: 5px auto;
+          border-radius: 5px; }
+        #main-div .root-div .div-contaner .history-section .delete-history-bt {
+          width: 38px;
+          height: 38px;
+          float: right;
+          margin-right: 10px;
+          background: none;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px; }
+          #main-div .root-div .div-contaner .history-section .delete-history-bt .bi-trash3-fill {
+            font-size: 1.2rem; }
+          #main-div .root-div .div-contaner .history-section .delete-history-bt:hover {
+            border: 1px #878785 solid; }
+      #main-div .root-div .div-contaner .history-section-open {
+        animation: open-history-sectoin 1s forwards; }
 
 @keyframes openside {
   from {
     opacity: 0;
     z-index: -10;
-    left: -295px; }
+    left: -80px; }
   to {
     z-index: 10;
     left: 50px; } }
+@keyframes open-history-sectoin {
+  from {
+    z-index: -10;
+    left: -500px;
+    opacity: 0; }
+  to {
+    z-index: 10;
+    left: 2px;
+    opacity: 1; } }
 
 /*# sourceMappingURL=style.css.map */

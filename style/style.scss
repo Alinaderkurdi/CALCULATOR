@@ -35,7 +35,7 @@ body{
         border : 1px black solid;
         margin: 2px auto;
         margin-top: 15px;
-        margin-left:0px;
+        margin-left: 0px;
         min-width: 310px;
         max-width: 451px;
         border-radius: 2px;
@@ -238,8 +238,42 @@ body{
             position: absolute;
             min-width: 310px;
             max-width: 449px;
-           // display: none;
+            z-index: -10;
+            left: -500px;
+            opacity: 0.8;
+            
+            .out-put-section{
+              width: 95%;
+              height: 500px;
+              border: 1px  solid;
+              margin: 5px auto;
+              border-radius: 5px;
+            }
+            
+            .delete-history-bt{
+                width: $button-w ;
+                height: $button-h;
+                float: right;
+                margin-right: 10px;
+                background: none;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
 
+
+                .bi-trash3-fill{
+                    font-size: 1.2rem;
+                }
+                &:hover{
+                   
+                    border: 1px #878785 solid;
+                }
+            }
+        }
+
+        .history-section-open{
+           animation:  open-history-sectoin 1s forwards;
         }
 
 
@@ -255,11 +289,24 @@ body{
        opacity: 0;
        z-index: -10;
        //left: -90px;
-       left: -295px;
+       left: -80px;
     }
     to{
        // left: 0px;
         z-index: 10;
         left: 50px;
+    }
+}
+
+@keyframes open-history-sectoin{
+    from{
+        z-index: -10;
+        left: -500px;
+        opacity: 0;
+    }
+    to{
+        z-index: 10;
+        left: 2px;
+        opacity: 1;
     }
 }
