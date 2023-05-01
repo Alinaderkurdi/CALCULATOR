@@ -46,8 +46,9 @@ body{
             height: 683px;
             position: absolute;
             margin-top: 45px;
-            margin-left: 1px;
-            border: 2px red solid;
+            margin-left: 2px;
+           // border: 2px red solid;
+            border: 1px solid;
             border-radius: 4px;
             background-color: #E6E6E6;
             left: -90px;
@@ -61,7 +62,7 @@ body{
         .head-section{
             width: 100%;
             height: 45px;
-            border: 1px rgb(64, 255, 0) solid;
+            //border: 1px rgb(64, 255, 0) solid;
             min-width: 310px;
             max-width: 450px;
             display: flex;
@@ -130,7 +131,7 @@ body{
         .input-section{
             width: 100%;
             height: 105px;
-            border: 1px red solid;
+           // border: 1px red solid;
             margin-top: 20px;
             max-width: 450px;
             min-width: 310px;
@@ -179,7 +180,7 @@ body{
         .key-section{
            width: 100%;
            height: 500px; 
-           border: 1px orangered solid;
+          // border: 1px orangered solid;
            margin-top: 10px;
            min-width: 310px;
            max-width: 450px;
@@ -187,7 +188,7 @@ body{
            .key-bord-pad{
              width : 98.5%;
              height: 99%;
-             border: 1px rgb(255, 128, 0) solid;
+           //  border: 1px rgb(255, 128, 0) solid;
              margin-left: 3px;
              margin-top: 2px;
              background-color: #E6E6E6;
@@ -233,21 +234,71 @@ body{
         .history-section{
             width: inherit;
             height: 550px;
-            background-color: #D1D1D1;
+            background-color: #F2F2F2;
             bottom: 50px;
             position: absolute;
             min-width: 310px;
-            max-width: 449px;
+            max-width: 448px;
             z-index: -10;
             left: -500px;
             opacity: 0.8;
+            border-radius: 2px;
             
             .out-put-section{
-              width: 95%;
+              width: 99%;
               height: 500px;
-              border: 1px  solid;
+             // border: 1px  solid;
               margin: 5px auto;
               border-radius: 5px;
+              //overflow: scroll;
+
+              .result-continer{
+                width: 99%;
+                height: 490px;
+                margin: 1px auto;
+                background-color: #F2F2F2;
+
+                .out-put-text{
+                    width: 99%;
+                    height: 70px;
+                    background-color: #F2F2F2; 
+                    margin-top: 2px;
+                    border-radius: 2px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    grid-template-rows: repeat(3, 22px);
+                    gap: 0px 10px;
+                    color: #7d7d7d;
+                    &:hover{
+                        background-color: #DADADA;
+                    }
+
+                    .user-input-number{
+                       font-family: inherit;
+                       margin-left: 30px;
+                       font-size: 0.9rem;
+                       grid-column: 2/3;
+                    }
+
+                    .result-number{
+                        font-family: inherit;
+                        margin-left: 30px;
+                        font-size: 1.4rem;
+                        grid-column: 2/3;
+                        color: black;
+                    }
+
+                    .date{
+                        font-size: 0.7rem;
+                        grid-column: 1/2;
+                        grid-row: 3/4;
+                        margin-left: 4px;
+                        margin-top: 3px;
+
+                    }
+
+                }
+              }
             }
             
             .delete-history-bt{
@@ -262,18 +313,17 @@ body{
                 border-radius: 4px;
 
 
-                .bi-trash3-fill{
+                .bi-trash3{
                     font-size: 1.2rem;
                 }
                 &:hover{
-                   
-                    border: 1px #878785 solid;
+                    background-color:#D1D1D1;
                 }
             }
         }
 
         .history-section-open{
-           animation:  open-history-sectoin 1s forwards;
+           animation:  open-history-sectoin 900ms forwards;
         }
 
 
@@ -283,18 +333,18 @@ body{
 
    
 }
-
+//
 @keyframes openside {
     from{
        opacity: 0;
        z-index: -10;
-       //left: -90px;
-       left: -80px;
+       left: -90px;
+       //left: -80px;
     }
     to{
-       // left: 0px;
+        left: 0px;
         z-index: 10;
-        left: 50px;
+        //left: 50px;
     }
 }
 
