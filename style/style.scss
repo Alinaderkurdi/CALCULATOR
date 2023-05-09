@@ -442,7 +442,7 @@ body{
                     margin-top: 2px;
                     border-radius: 2px;
                     display: grid;
-                    grid-template-columns: repeat(2, 50%);
+                    grid-template-columns: 35% 65%;
                     grid-template-rows: repeat(3, 22px);
                     gap: 0px 10px;
                     color: #7d7d7d;
@@ -452,14 +452,14 @@ body{
 
                     .user-input-number{
                        font-family: inherit;
-                       margin-left: 30px;
+                       margin-left: 15px;
                        font-size: 0.9rem;
                        grid-column: 2/3;
                     }
 
                     .result-number{
                         font-family: inherit;
-                        margin-left: 30px;
+                        margin-left: 15px;
                         font-size: 1.4rem;
                         grid-column: 2/3;
                         color: black;
