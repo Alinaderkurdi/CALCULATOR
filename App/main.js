@@ -1,13 +1,45 @@
-import {getElement} from './GetElement.js';
-import {addEvent } from './Add-event.js';
+
+import * as  elementrefrence from "./GetElement.js";
+import { addEvent } from './Add-event.js';
 
 
-const showSideBareAndhistorySection = (sectionCalss , animationClass)=>{
-   getElement(sectionCalss).classList.add(animationClass)
+//elementrefrence.getElementInArray('key-bord', 'button')
+
+
+
+const addToInputBox = (buttonValue)=>{
+  console.log(buttonValue)
+}
+
+const showSideBareAndhistorySection = ( sectionCalss , animationClass, e)=>{
+   console.log(e.target.className)
+   elementrefrence.getElement(sectionCalss).classList.toggle(animationClass)
+}
+
+const getButtonValue = (event)=>{
+    if(event.target.value){
+       addToInputBox(event.target.value)
+    }else{
+      return
+    }
+    
 }
 
 
 
+addEvent(
+    elementrefrence.elementRefrencebyId('key-bord'),
+    'click',
+    getButtonValue
+)
 
-addEvent(getElement('.side-bare-button'),'click', showSideBareAndhistorySection.bind(this , '.side-section', 'side-testopen'))
-addEvent(getElement('.history-button'),'click', showSideBareAndhistorySection.bind(this , '.history-section', 'history-section-open'))
+addEvent(
+   elementrefrence .getElement('.side-bare-button'),
+    'click',
+    showSideBareAndhistorySection.bind(this ,'.side-section', 'side-testopen')
+)
+addEvent(
+    elementrefrence.getElement('.history-button'),
+    'click',
+    showSideBareAndhistorySection.bind(this, '.history-section', 'history-section-open')
+)
