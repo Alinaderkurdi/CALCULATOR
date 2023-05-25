@@ -1,30 +1,20 @@
 
 
-
-
-
-//export const createNewElement = (NameElment, elementCalssName , elementText, CreateNestedChild)=>{
-//    const newElement =  document.createElement(NameElment)
-//    newElement.className = elementCalssName
-//    newElement.textContent = elementText
-//   
-//    return newElement
-//}
-
 const createNestedElement = (nestElement, parentElement)=>{
-    let parentElementsss = parentElement
-    for(let i = 0 ; i < nestElement.numberOfElement ; i++){
-        const nestElementName = document.createElement(nestElement.elementName)
-      //  console.log(nestElementName)
-        nestElement.className = nestElement.elementscalssName.length[i]
-        nestElement.textContent = nestElement.elementsTextContent.length[i]
-        console.log(nestElementName)
-        parentElementsss.appendChild(nestElementName)
+    let {addOrNot , ...newElementObject} = nestElement
+    let parentElementRefrense = parentElement;
+    for(let i = 0 ; i < newElementObject.numberOfElement ; i++){
+        const nestElementName = document.createElement(newElementObject.elementName)
+        nestElementName.className = newElementObject.elementscalssName[i]
+        nestElementName.textContent = newElementObject.elementsTextContent[i]
+        parentElementRefrense.appendChild(nestElementName)
+
     }
-    console.log(parentElementsss)
-    return parentElementsss
+   // console.log(parentElementRefrense)
+    return parentElementRefrense;
 }
 
+// this tow function need to be more dynamic !!!
 
 export const createNewElement = (
     NameElment,
@@ -34,11 +24,15 @@ export const createNewElement = (
 )=>{
    let newElement =  document.createElement(NameElment)
    //newElement 
-   if (CreateChildElementObject.addOrNot){
-    createNestedElement(CreateChildElementObject, newElement)
-   }
+  // if (CreateChildElementObject.addOrNot){
+  //  const test =  createNestedElement(CreateChildElementObject, newElement)
+  //  console.log(test)
+  // // let testTow =   test.querySelectorAll('p')
+  // // for(const el of testTow){
+  // //     console.log(el)
+  // // }
+  // }
     newElement.className = elementCalssName
     newElement.textContent = elementText
-    return newElement
+    return CreateChildElementObject.addOrNot ? createNestedElement(CreateChildElementObject, newElement) : newElement
 }
-console.log('test')
