@@ -41,3 +41,6 @@ export const createNewElement = (
     newElement.textContent = elementText
     return newElement
 }
+
+
+console.log('test console.log!!!')
