@@ -10,7 +10,7 @@ const createNestedElement = (nestElement, parentElement)=>{
         parentElementRefrense.appendChild(nestElementName)
 
     }
-   // console.log(parentElementRefrense)
+    
     return parentElementRefrense;
 }
 
@@ -23,15 +23,6 @@ export const createNewElement = (
     CreateChildElementObject = null
 )=>{
    let newElement =  document.createElement(NameElment)
-   //newElement 
-  // if (CreateChildElementObject.addOrNot){
-  //  const test =  createNestedElement(CreateChildElementObject, newElement)
-  //  console.log(test)
-  // // let testTow =   test.querySelectorAll('p')
-  // // for(const el of testTow){
-  // //     console.log(el)
-  // // }
-  // }
     newElement.className = elementCalssName
     newElement.textContent = elementText
     return CreateChildElementObject.addOrNot ? createNestedElement(CreateChildElementObject, newElement) : newElement

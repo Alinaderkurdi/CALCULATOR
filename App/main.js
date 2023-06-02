@@ -2,44 +2,28 @@
 import * as  elementrefrence from "./GetElement.js";
 import { addEvent } from './Add-event.js';
 
-//import { operationButton } from "./Operation.js";
 import { createNewElement } from "./ElementCreator.js";
 
-//operationButton(elementrefrence.getElementInArray('key-bord', 'button'))
 
-const testToAddhistorySection = (elementRef , create , e ,data)=>{
-  console.log(create('li', 'out-put-text', null , {
-    addOrNot : true,
-    elementName : 'p',
-    numberOfElement : 3,
-    elementscalssName : [
-      'user-input-number',
-      'result-number',
-      'date'
-    ],
-    elementsTextContent : [
-      '1+1=',
-      '3',
-      ['2023','4', '1']
-    ]
+import { operatinoTest } from "./Operation.js";
+
+const testToAddhistorySection = (elementRef , create , e)=>{
+  console.log(
+    create('li', 'out-put-text', null , {
+      addOrNot : true,
+      elementName : 'p',
+      numberOfElement : 3,
+      elementscalssName : [
+        'user-input-number',
+        'result-number',
+        'date'
+      ],
+      elementsTextContent : [
+        '1+1=',
+        '3',
+        '2023/5/22'
+      ]
   }))
-  
- //create(
- //  'div', 'someCalss', 'hell world',
- //  {
- //    addOrNot: true,
- //    elementName : 'p',
- //    numberOfElement : 5,
- //    elementscalssName : [
- //      'someClassTow',
- //    ],
- //    elementsTextContent :[
- //      'hello world'
- //    ]
- //  }
- //)
-  //add true of flase 
-  //configer this function just for test and i'll should mkes this function more dynamic
 }
 
 
@@ -50,24 +34,41 @@ const addToInputBox = (buttonValue)=>{
   elementrefrence.getElement('.input-fild').value = inputFildValue.join('')
 }
 
+
+const printLastInputValue = ()=>{//this function for test!!!
+  console.log('input test function value !!!')
+  return elementrefrence.getElement('.input-fild').value
+}
+
+
+const testClearButton = ()=>{
+  const currentValue = printLastInputValue()
+  addToInputBox(currentValue.slice(0, -1))
+}
+
+
+
 const showSideBareAndhistorySection = ( sectionCalss , animationClass, e)=>{
   console.log(e.target.className)
   elementrefrence.getElement(sectionCalss).classList.toggle(animationClass)
 }
 
-const printLastInputValue = ()=>{//this function for test!!!
-  console.log('input test function value !!!')
-  console.log(elementrefrence.getElement('.input-fild').value)
-}
+
 
 const getButtonValue = (event)=>{
-    if(event.target.value){
-       addToInputBox(event.target.value)
-    }else{
-      return
-    }
+  if(event.target.value){
+     addToInputBox(event.target.value)
+  }else{
+    return
+  }
 }
 
+
+addEvent(
+  elementrefrence.elementRefrencebyId('test-id'),
+  'click',
+  testClearButton
+)
 
 addEvent(
   elementrefrence.getElement('.darke-mode-button'),
