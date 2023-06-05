@@ -6,24 +6,8 @@ import { createNewElement } from "./ElementCreator.js";
 
 import { operatinoTest } from "./Operation.js";
 
-const testToAddhistorySection = (elementRef , create , e)=>{
-  console.log(
-    create('li', 'out-put-text', null, {
-      addOrNot : true,
-      elementName : 'p',
-      numberOfElement : 3,
-      elementscalssName : [
-        'user-input-number',
-        'result-number',
-        'date'
-      ],
-      elementsTextContent : [
-        '1+1=',
-        '3',
-        '2023/5/22'
-      ]
-  }))
-}
+
+
 
 const getCurrentDate = ()=>{
   const date = new Date()
@@ -32,7 +16,7 @@ const getCurrentDate = ()=>{
   return `${year}/${day}/${month}`;
 }
 
-
+//this function need to call with dynamic result and enetry number!!
 const addToHistorySection = (enterytext, textResult, date)=>{
   const  parent  = elementrefrence.elementRefrencebyId('result-box')
   const result = createNewElement('li', 'out-put-text', null , {
@@ -73,16 +57,13 @@ const addToInputBox = (buttonValue)=>{
 const clearInputBox = ()=>{
   const currentInputValue =  getCurrentInputBox()
   const newValue = currentInputValue.slice(0, -1)
-  
 }
-
 
 
 const showSideBareAndhistorySection = ( sectionCalss , animationClass, e)=>{
   console.log(e.target.className)
   elementrefrence.getElement(sectionCalss).classList.toggle(animationClass)
 }
-
 
 
 const getButtonValue = (event)=>{
