@@ -4,12 +4,11 @@ import { addEvent } from './Add-event.js';
 
 import { createNewElement } from "./ElementCreator.js";
 
-
 import { operatinoTest } from "./Operation.js";
 
 const testToAddhistorySection = (elementRef , create , e)=>{
   console.log(
-    create('li', 'out-put-text', null , {
+    create('li', 'out-put-text', null, {
       addOrNot : true,
       elementName : 'p',
       numberOfElement : 3,
@@ -26,19 +25,44 @@ const testToAddhistorySection = (elementRef , create , e)=>{
   }))
 }
 
-
 const getCurrentDate = ()=>{
   const date = new Date()
   const time = [date.getFullYear().toString(),date.getMonth().toString() ,date.getDay().toString()]
   const [ year, month , day] = time
-  return `${year}/${month}/${day}`;
+  return `${year}/${day}/${month}`;
 }
 
 
-console.log(getCurrentDate())
+const addToHistorySection = (enterytext, textResult, date)=>{
+  const  parent  = elementrefrence.elementRefrencebyId('result-box')
+  const result = createNewElement('li', 'out-put-text', null , {
+    addOrNot : true,
+    elementName : 'p',
+    numberOfElement : 3,
+    elementscalssName : [
+      'user-input-number',
+      'result-number',
+      'date'
+    ],
+    elementsTextContent : [
+      enterytext,
+      textResult,
+      date
+    ]
+})
+  parent.appendChild(result)
+}
+
+addToHistorySection('12+12=', '24', getCurrentDate())
+
+
+
 
 let inputFildValue = []
 
+const getCurrentInputBox = ()=>{
+  return elementrefrence.getElement('.input-fild').value
+}
 
 const addToInputBox = (buttonValue)=>{
   inputFildValue.push(buttonValue)
@@ -46,16 +70,10 @@ const addToInputBox = (buttonValue)=>{
 }
 
 
-const printLastInputValue = ()=>{//this function for test!!!
-  console.log('input test function value !!!')
-
- // return elementrefrence.getElement('.input-fild').value
-}
-
-
-const testClearButton = ()=>{
-  const currentValue = printLastInputValue()
-  addToInputBox(currentValue.slice(0, -1))
+const clearInputBox = ()=>{
+  const currentInputValue =  getCurrentInputBox()
+  const newValue = currentInputValue.slice(0, -1)
+  
 }
 
 
@@ -79,7 +97,7 @@ const getButtonValue = (event)=>{
 addEvent(
   elementrefrence.elementRefrencebyId('test-id'),
   'click',
-  testClearButton
+  clearInputBox
 )
 
 addEvent(
