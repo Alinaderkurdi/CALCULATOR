@@ -27,7 +27,18 @@ const testToAddhistorySection = (elementRef , create , e)=>{
 }
 
 
+const getCurrentDate = ()=>{
+  const date = new Date()
+  const time = [date.getFullYear().toString(),date.getMonth().toString() ,date.getDay().toString()]
+  const [ year, month , day] = time
+  return `${year}/${month}/${day}`;
+}
+
+
+console.log(getCurrentDate())
+
 let inputFildValue = []
+
 
 const addToInputBox = (buttonValue)=>{
   inputFildValue.push(buttonValue)
@@ -37,7 +48,8 @@ const addToInputBox = (buttonValue)=>{
 
 const printLastInputValue = ()=>{//this function for test!!!
   console.log('input test function value !!!')
-  return elementrefrence.getElement('.input-fild').value
+
+ // return elementrefrence.getElement('.input-fild').value
 }
 
 
